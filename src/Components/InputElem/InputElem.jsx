@@ -21,9 +21,9 @@ const useStyles = makeStyles(theme => ({
   // withoutLabel: {
   //   marginTop: theme.spacing(3),
   // },
-  // textField: {
-  //   width: '25ch',
-  // },
+  textField: {
+    width: "100%",
+  },
   input: {
     color: 'blue',
     // backgroundColor: 'lightblue'

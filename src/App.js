@@ -19,7 +19,7 @@ import {
 } from '@material-ui/core';
 import Icon from './Icon.svg';
 import Logo from './Logo.png';
-import SectionAnalysis from './Views/SectionAnalysis/SectionAnalysis';
+import PlatineAnalysis from './Views/PlatineAnalysis/PlatineAnalysis';
 
 const Menu = {
   MenuNavBar: [
@@ -78,7 +78,7 @@ const App = () => {
           menu={Menu}
         >
           <Switch>
-            <Route exact path="/my-app-name" component={SectionAnalysis} />
+            <Route exact path="/my-app-name" component={PlatineAnalysis} />
             <Redirect from="/" to="/my-app-name" />
           </Switch>
         </AppContainerElem>
