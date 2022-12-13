@@ -188,7 +188,7 @@ function PlatineAnalysis() {
                 value={values.FtRd}
                 text={'FtRd'}
                 description={'Résistance ultime à la traction du boulon'}
-                unit={'MPa'}
+                unit={'KN'}
                 onChange={handleChangeValues('FtRd')}
               />
             </CardElem>
