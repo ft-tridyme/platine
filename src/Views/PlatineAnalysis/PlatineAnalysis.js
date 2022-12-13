@@ -110,6 +110,9 @@ function PlatineAnalysis() {
               title="Géométrie"
               subtitle="dimensions"
             >
+
+            <Grid container item md={12}  >
+              <Grid item md={6}>
               <InputElem
                 value={values.d1}
                 text={'d1'}
@@ -151,6 +154,11 @@ function PlatineAnalysis() {
                 description={'Nombre de tijes'}
                 onChange={handleChangeValues('n')}
               />
+              </Grid>
+              <Grid item xs={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <img src="/images/4.png" alt="" width="500px" />
+          </Grid>
+          </Grid>
             </CardElem>
           </Grid>
         )}
@@ -184,31 +192,40 @@ function PlatineAnalysis() {
                 onChange={handleChangeValues('FtRd')}
               />
             </CardElem>
+            
             <CardElem
               title="Efforts"
               subtitle="Effort Axial et Moment"
               >
-              <InputElem
-                value={values.NEd}
-                text={'NEd'}
-                description={'Effort Axial de calcul:'}
-                unit={'KN'}
-                onChange={handleChangeValues('NEd')}
-              />
-              <InputElem
-                value={values.MEd}
-                text={'MEd'}
-                description={'Moment de calcul:'}
-                unit={'KN.m'}
-                onChange={handleChangeValues('MEd')}
-              />
-              <InputElem
-                value={values.eN}
-                text={'eN'}
-                description={'Excentrement de Charge:'}
-                unit={'m'}
-                onChange={handleChangeValues('eN')}
-              />
+                
+            <Grid container item md={12}  >
+              <Grid item md={6}>
+                <InputElem
+                  value={values.NEd}
+                  text={'NEd'}
+                  description={'Effort Axial de calcul:'}
+                  unit={'KN'}
+                  onChange={handleChangeValues('NEd')}
+                />
+                <InputElem
+                  value={values.MEd}
+                  text={'MEd'}
+                  description={'Moment de calcul:'}
+                  unit={'KN.m'}
+                  onChange={handleChangeValues('MEd')}
+                />
+                <InputElem
+                  value={values.eN}
+                  text={'eN'}
+                  description={'Excentrement de Charge:'}
+                  unit={'m'}
+                  onChange={handleChangeValues('eN')}
+                />
+              </Grid>
+              <Grid item xs={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src="/images/1.svg" alt="" width="400px" />
+              </Grid>
+            </Grid>
             </CardElem>
               
           </Grid>
@@ -359,11 +376,12 @@ function PlatineAnalysis() {
       </Grid>
       <Grid item md={12}>
         {tabIndex === 2 && (
-          <Grid item md={12}>
-            <CardElem
-              title="Résistance"
-              subtitle="Moment Résistant"
-            >
+          <CardElem
+            title="Résistance"
+            subtitle="Moment Résistant"
+          >
+        <Grid container item md={12}  >
+          <Grid item md={6}>
               <InputElem
                 value={values.combinaison}
                 text={'combinaison'}
@@ -396,8 +414,12 @@ function PlatineAnalysis() {
                 description={'fs:'}
                 onChange={handleChangeValues('fs')}
               />
-            </CardElem>
+            </Grid>
+          <Grid item xs={6} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <img src="/images/3.png" alt="" width="500px" />
           </Grid>
+        </Grid>
+        </CardElem>
         )}
       </Grid>
     </Grid >

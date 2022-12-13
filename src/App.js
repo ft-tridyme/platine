@@ -69,11 +69,11 @@ const App = () => {
           title={<ListItem>
             <ListItemAvatar>
               <Avatar
-                alt={`Section Geometry`}
+                alt={`TriDyme | Circular Anchor Plate at Eurocodes`}
                 src={Icon}
               />
             </ListItemAvatar>
-            <ListItemText primary={`Section Geometry`} />
+            <ListItemText primary={`TriDyme | Circular Anchor Plate at Eurocodes`} />
           </ListItem>}
           menu={Menu}
         >
