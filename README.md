@@ -6,7 +6,7 @@
 
 ## <a name="presentation"></a>Presentation
 
-**Shear and Tension Bolts at Eurocodes** is a web application for the design of non-preloaded bolts under shear and/or tension stress based on Eurocode 3.
+**Circular Anchor Plate at Eurocodes** is a web application for the design of Circular Anchor Plates under Normal Effort and/or Moment based on Eurocode 3.
 
 - Link to the Application: https://shear-and-tension-bolts-eurocodes.tridyme.com
 - Link to the documentation: https://www.notion.so/Shear-and-Tension-Bolts-at-Eurocodes-8f00083eb39d4c8a9294c041f42a569c
