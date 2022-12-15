@@ -44,7 +44,9 @@ const calculations = {
       verification: calculations.verification(inputs),
       fs: calculations.fs(inputs),
       sc: calculations.sc(inputs),
-
+      c: calculations.c(inputs),
+      s1: calculations.s1(inputs),
+      s2: calculations.s2(inputs)
     }
   }, // NE PAS OUBLIER LA VIRGULE
   // CALCULATION FUNCTIONS
@@ -189,11 +191,38 @@ const calculations = {
     return Math.min (FTRdmode1,FTRdmode2,FTRdmode3) ;
   }, // NE PAS OUBLIER LA VIRGULE
 
+  c: (inputs) => {
+    const {
+      e2,
+      fyp,
+      fck
+    } = inputs;
+    return (e2*(fyp*1.5/(3*fck))**0.5) ;
+  }, // NE PAS OUBLIER LA VIRGULE 
+  
+  s1: (inputs) => {
+    const {
+      d1,
+      e1,
+      c
+    } = inputs;
+    return ( Math.PI *(d1-2*e1-2*c)**2 /4 ) ;
+  }, // NE PAS OUBLIER LA VIRGULE
+
+  s2: (inputs) => {
+    const {
+      d1,
+      c
+    } = inputs;
+    return ( Math.PI *(d1+2*c)**2/4) ;
+  }, // NE PAS OUBLIER LA VIRGULE
+
   sc: (inputs) => {
     const {
-      d1
+      s1,
+      s2
     } = inputs;
-    return ((( Math.PI *((d1+13.1)**2) )/4 )-( Math.PI * ((d1-13.1)**2) /4)) ;
+    return (s2-s1) ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   FcRd: (inputs) => {
@@ -212,16 +241,16 @@ const calculations = {
       zc
     } = inputs;
     if(NEd<=0)
-      if(Math.abs(eN)<zc)
+      if(-zc<eN)
       return "combinaison a" 
-      if(Math.abs(eN)>=zc)
+      if(eN<=-zc)
       return "combinaison d"
     else 
     return ("error")
     if(NEd>0)
-      if(Math.abs(eN)<zt)
+      if(eN<zt)
       return "combinaison b" 
-      if(Math.abs(eN)>=zt)
+      if(eN>=zt)
       return "combinaison c"
     else 
     return ("error");
@@ -256,15 +285,15 @@ const calculations = {
       zt
     } = inputs;
     if (combinaison=="combinaison a")
-    return Math.min(-FcRd*z/(zc/eN+1),-FcRd*z/(zc/eN-1));
+    return (-FcRd*z/(zc/eN-1));
     if (combinaison=="combinaison b")
-    return Math.min(FTRd*z/(zt/eN+1),FTRd*z/(zt/eN-1));
+    return (FTRd*z/(zt/eN+1));
     if (combinaison=="combinaison c" )
-    return Math.min(FTRd*z/(zc/eN+1),-FcRd*z/(zt/eN+1));
+    return Math.min(FTRd*z/(zc/eN+1),-FcRd*z/(zt/eN-1));
     if (combinaison=="combinaison d" )
-    return Math.min(FTRd*z/(zc/eN+1),-FcRd*z/(zt/eN+1));
+    return Math.min(FTRd*z/(zc/eN+1),-FcRd*z/(zt/eN-1));
     else 
-    return ("error")
+    return ("error")  
   }, // NE PAS OUBLIER LA VIRGULE
 
   verification: (inputs) => {

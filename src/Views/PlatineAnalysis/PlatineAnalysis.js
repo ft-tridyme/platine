@@ -35,7 +35,7 @@ function PlatineAnalysis() {
     fyp: 235,      // Inputs: limite élastique de la platine
     FtRd: 226,      // Inputs: Résistance ultime à la traction du boulon
     NEd: -58.5,         // Inputs: Effort Axial de calcul
-    MEd: -1002,      // Inputs: Moment de calcul
+    MEd: 1002,      // Inputs: Moment de calcul
     eN: 17.13,      // Inputs: Excentrement de charge
     combinaison: "combinaison d",      // Inputs: Choix de la combinaison
     z: 1.327,      // Inputs: Bras de Levier
@@ -357,6 +357,25 @@ function PlatineAnalysis() {
                 unit={'kN'}
                 onChange={handleChangeValues('FTRd')}
               />
+              <InputElem
+                value={values.c}
+                text={'c'}
+                onChange={handleChangeValues('c')}
+              />
+              <InputElem
+                value={values.s1}
+                text={'s1'}
+                description={'surface 1'}
+                unit={'mm2'}
+                onChange={handleChangeValues('s1')}
+              />
+              <InputElem
+                value={values.s2}
+                text={'s2'}
+                description={'surface 2'}
+                unit={'mm2'}
+                onChange={handleChangeValues('s2')}
+              />      
               <InputElem
                 value={values.sc}
                 text={'sc'}
