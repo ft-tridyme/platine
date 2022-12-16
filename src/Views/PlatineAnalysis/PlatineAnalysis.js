@@ -39,9 +39,9 @@ function PlatineAnalysis() {
     eN: 17.13,      // Inputs: Excentrement de charge
     combinaison: "combinaison d",      // Inputs: Choix de la combinaison
     z: 1.327,      // Inputs: Bras de Levier
-    Mr: -830.5,         // Inputs: Moment résistant
-    verification: "ok",      // Inputs: vérification
-    fs: 1.118,      // Inputs: Facteur de sécurité
+    Mr: 595.95,         // Inputs: Moment résistant
+    verification: "nok",      // Inputs: vérification
+    fs: 0.59477,      // Inputs: Facteur de sécurité
     m: 50,         
     ex: 55,         
     w: 57.5,         
@@ -57,8 +57,11 @@ function PlatineAnalysis() {
     FTRdmode2: 2944.09,
     FTRdmode3: 5424,
     FTRd: 432.4,
-    FcRd: 877.97,
-    sc: 52678
+    c: 86.718,
+    s1: 940962.48,
+    s2: 1659134.63,
+    sc: 718172.148,
+    FcRd: 877.97
   });
 
 
@@ -360,6 +363,8 @@ function PlatineAnalysis() {
               <InputElem
                 value={values.c}
                 text={'c'}
+                description={'c'}
+                unit={'mm'}
                 onChange={handleChangeValues('c')}
               />
               <InputElem
