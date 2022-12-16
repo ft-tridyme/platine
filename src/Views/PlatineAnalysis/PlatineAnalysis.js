@@ -36,7 +36,7 @@ function PlatineAnalysis() {
     FtRd: 226,      // Inputs: Résistance ultime à la traction du boulon
     NEd: -58.5,         // Inputs: Effort Axial de calcul
     MEd: 1002,      // Inputs: Moment de calcul
-    eN: 17.13,      // Inputs: Excentrement de charge
+    eN: -17.13,      // Inputs: Excentrement de charge
     combinaison: "combinaison d",      // Inputs: Choix de la combinaison
     z: 1.327,      // Inputs: Bras de Levier
     Mr: 595.95,         // Inputs: Moment résistant
