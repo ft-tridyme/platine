@@ -5,9 +5,12 @@ import {
   Input,
   InputLabel,
   InputAdornment,
-  FormControl
+  FormControl,
+  TextField,
 } from '@material-ui/core';
 import ToolTips from '../ToolTips';
+// import './InputElem.css';
+import { NumberFormatBase, NumericFormat } from 'react-number-format';
 // import './InputElem.css';
 
 const useStyles = makeStyles(theme => ({
@@ -50,6 +53,7 @@ const InputElem = ({
       >
         <InputLabel htmlFor="outlined-adornment-amount">{description}</InputLabel>
         <Input
+          variant="outlined"
           className={onChange && classes.input}
           value={value}
           startAdornment={text &&
@@ -63,11 +67,11 @@ const InputElem = ({
                   description={description}
                   target={text}
                 />
-              }
-            </InputAdornment>}
-          endAdornment={<InputAdornment position="end">{unit}</InputAdornment>}
-          onChange={onChange}
-        />
+              }              
+              </InputAdornment>}
+            endAdornment={<InputAdornment position="end">{unit}</InputAdornment>}                
+            onChange={onChange}
+            />
       </FormControl>
     </div>
   );
