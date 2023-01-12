@@ -5,33 +5,44 @@ import {
   Input,
   InputLabel,
   InputAdornment,
-  FormControl
+  FormControl,
+  TextField,
+  OutlinedInput,
+  Box,
+  Grid,
+  Typography,
 } from '@material-ui/core';
 import ToolTips from '../ToolTips';
+import { NumericFormat } from 'react-number-format';
 // import './InputElem.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
+
   },
   margin: {
     margin: theme.spacing(1),
   },
-  // withoutLabel: {
-  //   marginTop: theme.spacing(3),
-  // },
+
   textField: {
     width: "100%",
+
   },
   input: {
-    color: 'blue',
-    // backgroundColor: 'lightblue'
+    color: 'black',
+    textAlign: "center",
+    backgroundColor: "white",
+
+
   },
   inputAdornment: {
     // paddingRight: '1em',
     color: 'black'
-  }
+  },
+
+
 }));
 
 const InputElem = ({
@@ -39,36 +50,45 @@ const InputElem = ({
   description,
   value,
   unit,
-  onChange
+  onChange,
+
 }) => {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
-      <FormControl
-        className={clsx(classes.margin, classes.withoutLabel, classes.textField)}
-      // variant="outlined"
-      >
-        <InputLabel htmlFor="outlined-adornment-amount">{description}</InputLabel>
-        <Input
-          className={onChange && classes.input}
-          value={value}
-          startAdornment={text &&
-            <InputAdornment
-              position="start"
-              className={classes.inputAdornment}
-            >
-              {text}
-              {(text && description) &&
-                <ToolTips
-                  description={description}
-                  target={text}
-                />
-              }
-            </InputAdornment>}
-          endAdornment={<InputAdornment position="end">{unit}</InputAdornment>}
-          onChange={onChange}
-        />
-      </FormControl>
+
+      <Grid container item spacing={2} alignContent="center" alignItems='center' >
+        <Grid item xs={9}>
+          <FormControl
+
+            className={clsx(classes.margin, classes.withoutLabel, classes.textField,)}
+
+          >
+
+            <InputLabel htmlFor="outlined-adornment-amount">{description}</InputLabel>
+
+
+
+            <NumericFormat
+              customInput={TextField}
+              variant="outlined"
+              inputProps={{ style: { textAlign: 'center', } }}
+              className={onChange && classes.input}
+              value={value}
+              classes={{ input: classes.input }}
+
+
+              onChange={onChange}
+
+            />
+          </FormControl>
+        </Grid>
+        <Grid item xs={3} >
+          <Typography >{unit}</Typography>
+        </Grid>
+      </Grid>
+
     </div>
   );
 };

@@ -2,226 +2,182 @@ import calculations from './calculations';
 
 
 const d1 = 1280 ;
-const e1 = 6 ; 
+const e1 = 6 ;
+const d2 = 1490 ; 
+const d3 = 1380 ; 
+const e2 = 40 ; 
+const n = 24 ;
+const zc = 0.637 ;
+const zt = 0.69 ;
+
+const fck = 25 ;
+const fyp = 235 ;
+
+const NEd = -58.49 ;
+const MEd = 1002 ;
+const eN = -17.13 ;
+
+const m = 50;
+const ex = 55 ;
+const w = 57.5 ;
+const leffcp = 214.58 ;
+const leffnc = 268.75 ;
+const leff1 = 214.58 ;
+const leff2 = 268.75 ;
+const mplRd = 94 ;
+const Mpl1Rd = 20170.49 ;
+const Mpl2Rd = 25262.5 ;
+const FtRd = 226 ;
+const FTRdmode1 = 1613.64 ;
+const FTRdmode2 = 717.95 ;
+const FTRdmode3 = 452 ;
+const c = 86.72 ;
+const s1 = 940962.48 ;
+const s2 = 1659134.63 ;
+const sc = 718172.15 ;
+const FcRd = 11969.54 ;
+const combinaison = "combinaison d" ;
+const z = 1.327 ;
+const FTRd = 452 ;
+const Mr = 622.97 ;
+
+const verification = "nok" ;
+const fs = 0.62 ;
+
+
 
 test('calculations.zc', () => {
-    const result = calculations.zc(({d1,e1}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(0.637)
+    const Newzc = Number( calculations.zc(({d1,e1})))
+    expect(Newzc).toEqual(zc)
 })
 
-const d3 = 1380 ;
 test('calculations.zt', () => {
-    const result = calculations.zt(({d3}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(0.69)
+    const Newzt = Number(calculations.zt(({d3})))
+    expect(Newzt).toEqual(zt)
 })
 
-const MEd = 1002 ;
-const NEd = -58.5 ;
 test('calculations.eN', () => {
-    const result = calculations.eN(({MEd,NEd}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(-17.128205128205128)
+    const NeweN = Number(calculations.eN(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(NeweN).toEqual(eN)
 })
 
 test('calculations.m', () => {
-    const result = calculations.m(({d1,d3}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(50)
+    const Newm = Number(calculations.m(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(Newm).toEqual(m)
 })
 
-const d2 = 1490 ;
 test('calculations.ex', () => {
-    const result = calculations.ex(({d2,d3}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(55)
+    const Newex = Number(calculations.ex(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(Newex).toEqual(ex)
 })
 
-const n = 24 ;
 test('calculations.w', () => {
-    const result = calculations.w(({n,d3}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(57.5)
+    const Neww = Number(calculations.w(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(Neww).toEqual(w)
 })
 
-const m = 50 ;
-const ex = 55 ;
-const w = 57.5 ;
 test('calculations.leffcp', () => {
-    const result = calculations.leffcp(({m,ex,w}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(214.57963267948966)
+    const Newleffcp = Number(calculations.leffcp(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(Newleffcp).toEqual(leffcp)
 })
 
 test('calculations.leffnc', () => {
-    const result = calculations.leffnc(({m,e1,ex,w}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(57.5)
+    const Newleffnc = Number(calculations.leffnc(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(Newleffnc).toEqual(leffnc)
 })
 
-const leffnc = 57.5 ;
-const leffcp = 214.57 ;
 test('calculations.leff1', () => {
-    const result = calculations.leff1(({leffnc,leffcp}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(57.5)
+    const Newleff1 = Number(calculations.leff1(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(Newleff1).toEqual(leff1)
 })
 
 
 test('calculations.leff2', () => {
-    const result = calculations.leff2(({leffnc}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(57.5)
+    const Newleff2 = Number(calculations.leff2(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(Newleff2).toEqual(leff2)
 })
 
-const leff1 = 57.5 ;
-const leff2 = 57.5 ;
-const e2 = 40 ;
-const fyp = 235 ; 
 test('calculations.mplRd', () => {
-    const result = calculations.mplRd(({e2,fyp}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(94)
+    const NewmplRd= Number(calculations.mplRd(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(NewmplRd).toEqual(mplRd)
 })
 
-const mplRd = 94;
 test('calculations.Mpl1Rd', () => {
-    const result = calculations.Mpl1Rd(({leff1,mplRd}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(5405)
+    const NewMpl1Rd = Number(calculations.Mpl1Rd(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(NewMpl1Rd).toEqual(Mpl1Rd)
 })
 
 test('calculations.Mpl2Rd', () => {
-    const result = calculations.Mpl2Rd(({leff2,mplRd}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(5405)
+    const NewMpl2Rd = Number(calculations.Mpl2Rd(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(NewMpl2Rd).toEqual(Mpl2Rd)
 })
 
-const Mpl1Rd = 5405;
 test('calculations.FTRdmode1', () => {
-    const result = calculations.FTRdmode1(({Mpl1Rd,m}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(432.4)
+    const NewFTRdmode1 = Number(calculations.FTRdmode1(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(NewFTRdmode1).toEqual(FTRdmode1)
 })
 
-const Mpl2Rd = 5405;
-const FtRd = 226;
 test('calculations.FTRdmode2', () => {
-    const result = calculations.FTRdmode2(({Mpl2Rd,m,n,ex,FtRd}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(2944.095238095238)
+    const NewFTRdmode2 = Number(calculations.FTRdmode2(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(NewFTRdmode2).toEqual(FTRdmode2)
 })
 
 test('calculations.FTRdmode3', () => {
-    const result = calculations.FTRdmode3(({Mpl2Rd,m,n,ex,FtRd}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(5424)
+    const NewFTRdmode3 = Number(calculations.FTRdmode3(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(NewFTRdmode3).toEqual(FTRdmode3)
 })
 
-const FTRdmode1 = 432.4 ;
-const FTRdmode2 = 2944.095238 ;
-const FTRdmode3 = 5424 ;
 test('calculations.FTRd', () => {
-    const result = calculations.FTRd(({FTRdmode1,FTRdmode2,FTRdmode3}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(432.4)
+    const NewFTRd = Number(calculations.FTRd(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(NewFTRd).toEqual(FTRd)
 })
 
-const fck = 25 ;
 test('calculations.c', () => {
-    const result = calculations.c(({e2,fyp,fck}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(86.7179335547152)
+    const Newc = Number(calculations.c(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(Newc).toEqual(c)
 })
 
-const c = 86.7179 ;
 test('calculations.s1', () => {
-    const result = calculations.s1(({d1,e1,c}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(940962.5964537899)
+    const News1 = Number(calculations.s1(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(News1).toEqual(s1)
 })
 
 test('calculations.s2', () => {
-    const result = calculations.s2(({d1,c}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(1659134.475878253)
+    const News2 = Number(calculations.s2(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(News2).toEqual(s2)
 })
 
-const s1 = 940962.5965 ;
-const s2 = 1659134.476 ;
 test('calculations.sc', () => {
-    const result = calculations.sc(({s1,s2}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(718171.8795)
+    const Newsc = Number(calculations.sc(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(Newsc).toEqual(sc)
 })
 
-const sc = 718171.8795 ;
 test('calculations.FcRd', () => {
-    const result = calculations.FcRd(({fck,sc}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(11969.531325000002)
+    const NewFcRd = Number(calculations.FcRd(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(NewFcRd).toEqual(FcRd)
 })
 
-const eN = -17.13096256 ;
-const zt = 0.69 ;
-const zc = 0.637;
 test('calculations.combinaison', () => {
-    const result = calculations.combinaison(({NEd,eN,zt,zc}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual("combinaison d")
+    const Newcombinaison = calculations.combinaison(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs}))
+    expect(Newcombinaison).toEqual(combinaison)
 })
 
-const combinaison = "combinaison d";
 test('calculations.z', () => {
-    const result = calculations.z(({zt,zc,combinaison}))
-
-    console.log("My results is " + result)
-    expect(result).toEqual(1.327)
+    const Newz = Number(calculations.z(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})))
+    expect(Newz).toEqual(z)
 })
 
-const z = 1.327 ;
-const FcRd = 11969.5358 ;
-const FTRd = 432.4 ;
 test('calculations.Mr', () => {
-    const result = calculations.Mr(({zt,zc,combinaison,z,eN,FcRd,FTRd}))
-    console.log("My results is " + result)
-    expect(result).toEqual(595.9548653130134)
+    const NewMr = Number(calculations.Mr(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2));
+    expect(NewMr).toEqual(Mr)
 })
 
-const Mr = 595.9548653130134 ;
 test('calculations.verification', () => {
-    const result = calculations.verification(({Mr,MEd}))
-    console.log("My results is " + result)
-    expect(result).toEqual("nok")
+    const Newverification = calculations.verification(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs}))
+    expect(Newverification).toEqual(verification)
 })
 
-const verification = "nok"
 test('calculations.fs', () => {
-    const result = calculations.fs(({Mr,MEd,verification}))
-    console.log("My results is " + result)
-    expect(result).toEqual(0.5947653346437259)
+    const Newfs = Number(calculations.fs(({d1,e1,d2,d3,e2,n,zc,zt,fck,fyp,NEd,MEd,eN,m,ex,w,leffcp,leffnc,leff1,leff2,mplRd,Mpl1Rd,Mpl2Rd,FtRd,FTRdmode1,FTRdmode2,FTRdmode3,FTRd,c,s1,s2,sc,FcRd,combinaison,z,FTRd,Mr,MEd,verification,fs})).toFixed(2))
+    expect(Newfs).toEqual(fs)
 })

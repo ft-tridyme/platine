@@ -99,35 +99,42 @@ const calculations = {
 
   leffcp: (inputs) => {
     const {
-      m,
-      ex,
-      w
+      // m,
+      // ex,
+      // w
     } = inputs;
+    const m=calculations.m(inputs)
+    const ex=calculations.ex(inputs)
+    const w=calculations.w(inputs)
     return Math.min(2*Math.PI*m,Math.PI*m+w,Math.PI*m+2*ex);
   }, // NE PAS OUBLIER LA VIRGULE
 
   leffnc: (inputs) => {
     const {
-      m,
-      ex,
+      // m
+      // ex
       e1,
-      w
+      // w
     } = inputs;
-    return Math.min(4*e1+1.25*ex,0.5*w+4*m+1.25*ex,ex+2*m+0.625*ex,w);
+
+    const m=calculations.m(inputs)
+    const ex=calculations.ex(inputs)
+    const w=calculations.w(inputs)
+    return Math.min(4*m+1.25*ex,0.5*w+4*m+1.25*ex);
   }, // NE PAS OUBLIER LA VIRGULE
 
   leff1: (inputs) => {
     const {
-      leffnc,
-      leffcp
     } = inputs;
+    const leffnc=calculations.leffnc(inputs)
+    const leffcp=calculations.leffcp(inputs)
     return Math.min(leffcp,leffnc);
   }, // NE PAS OUBLIER LA VIRGULE
 
   leff2: (inputs) => {
     const {
-      leffnc
     } = inputs;
+    const leffnc=calculations.leffnc(inputs)
     return leffnc;
   }, // NE PAS OUBLIER LA VIRGULE
 
@@ -141,53 +148,52 @@ const calculations = {
 
   Mpl1Rd: (inputs) => {
     const {
-      mplRd,
-      leff1
     } = inputs;
+    const mplRd=calculations.mplRd(inputs);
+    const leff1=calculations.leff1(inputs);
     return leff1*mplRd ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   Mpl2Rd: (inputs) => {
     const {
-      mplRd,
-      leff2
     } = inputs;
+    const mplRd=calculations.mplRd(inputs);
+    const leff2=calculations.leff2(inputs);
     return leff2*mplRd ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   FTRdmode1: (inputs) => {
     const {
-      Mpl1Rd,
-      m
     } = inputs;
+    const Mpl1Rd=calculations.Mpl1Rd(inputs);
+    const m=calculations.m(inputs);
     return 4*Mpl1Rd/m ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   FTRdmode2: (inputs) => {
     const {
-      Mpl2Rd,
-      ex,
-      m,
       n,
       FtRd
     } = inputs;
-    return (2* Mpl2Rd+ ex*n*FtRd)/(m+ex) ;
+    const m=calculations.m(inputs)
+    const ex=calculations.ex(inputs)
+    const Mpl2Rd=calculations.Mpl2Rd(inputs)
+    return (2* Mpl2Rd+ ex*2*FtRd)/(m+ex) ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   FTRdmode3: (inputs) => {
     const {
-      n,
       FtRd
     } = inputs;
-    return n*FtRd ;
+    return 2*FtRd ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   FTRd: (inputs) => {
     const {
-      FTRdmode1,
-      FTRdmode2,
-      FTRdmode3
     } = inputs;
+    const FTRdmode1=calculations.FTRdmode1(inputs)
+    const FTRdmode2=calculations.FTRdmode2(inputs)
+    const FTRdmode3=calculations.FTRdmode3(inputs)
     return Math.min (FTRdmode1,FTRdmode2,FTRdmode3) ;
   }, // NE PAS OUBLIER LA VIRGULE
 
@@ -204,42 +210,43 @@ const calculations = {
     const {
       d1,
       e1,
-      c
     } = inputs;
+    const c=calculations.c(inputs);
     return ( Math.PI *(d1-2*e1-2*c)**2 /4 ) ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   s2: (inputs) => {
     const {
       d1,
-      c
+      //c
     } = inputs;
+    const c=calculations.c(inputs);
     return ( Math.PI *(d1+2*c)**2/4) ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   sc: (inputs) => {
     const {
-      s1,
-      s2
     } = inputs;
+    const s1=calculations.s1(inputs);
+    const s2=calculations.s2(inputs);
     return (s2-s1) ;
   }, // NE PAS OUBLIER LA VIRGULE
 
   FcRd: (inputs) => {
     const {
       fck,
-      sc
     } = inputs;
+    const sc=calculations.sc(inputs);
     return (fck/1.5)*sc / 1000;
   }, // NE PAS OUBLIER LA VIRGULE
 
   combinaison: (inputs) => {
     const {
       NEd,
-      eN,
-      zt,
-      zc
     } = inputs;
+    const eN=calculations.eN(inputs);
+    const zt=calculations.zt(inputs);
+    const zc=calculations.zc(inputs);
     if(NEd<=0)
       if(-zc<eN)
       return "combinaison a" 
@@ -258,10 +265,10 @@ const calculations = {
 
   z: (inputs) => {
     const {
-      combinaison,
-      zc,
-      zt
     } = inputs;
+    const zt=calculations.zt(inputs);
+    const zc=calculations.zc(inputs);
+    const combinaison=calculations.combinaison(inputs);
     if (combinaison=="combinaison a")
     return 2*zc;
     if (combinaison=="combinaison b")
@@ -276,14 +283,14 @@ const calculations = {
 
   Mr: (inputs) => {
     const {
-      combinaison,
-      zc,
-      eN,
-      FcRd,
-      FTRd,
-      z,
-      zt
     } = inputs;
+    const z=calculations.z(inputs);
+    const zc=calculations.zc(inputs);
+    const zt=calculations.zt(inputs);
+    const combinaison=calculations.combinaison(inputs);
+    const eN=calculations.eN(inputs);
+    const FcRd=calculations.FcRd(inputs);
+    const FTRd=calculations.FTRd(inputs);
     if (combinaison=="combinaison a")
     return (-FcRd*z/(zc/eN-1));
     if (combinaison=="combinaison b")
@@ -298,10 +305,10 @@ const calculations = {
 
   verification: (inputs) => {
     const {
-      combinaison,
-      Mr,
       MEd
     } = inputs;
+    const combinaison=calculations.combinaison(inputs);
+    const Mr=calculations.Mr(inputs);
     if (Math.abs(Mr)<Math.abs(MEd))
     return "nok"
     if (Math.abs(Mr)>=Math.abs(MEd))
@@ -312,10 +319,10 @@ const calculations = {
 
   fs: (inputs) => {
     const {
-      verification,
       MEd,
-      Mr
     } = inputs;
+    const verification=calculations.verification(inputs);
+    const Mr=calculations.Mr(inputs);
     if (verification=="ok")
     return Mr/MEd
     if (verification=="nok")
