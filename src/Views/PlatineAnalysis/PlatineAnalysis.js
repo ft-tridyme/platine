@@ -885,7 +885,7 @@ function PlatineAnalysis() {
                     />
                   </Grid>
                   <Grid  xs={6} >
-                    <OutputDetails
+                    <OutputElem
                 value={values.verification}
                 //text={'verification'}
                 //description={'verification:'}
