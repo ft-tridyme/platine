@@ -41,7 +41,7 @@ const z = 1.327 ;
 const FTRd = 452 ;
 const Mr = 622.97 ;
 
-const verification = "nok" ;
+const verification = "NOK" ;
 const fs = 0.62 ;
 
 

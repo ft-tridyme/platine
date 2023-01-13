@@ -323,9 +323,9 @@ const calculations = {
     } = inputs;
     const verification=calculations.verification(inputs);
     const Mr=calculations.Mr(inputs);
-    if (verification=="ok")
+    if (verification=="OK")
     return Mr/MEd
-    if (verification=="nok")
+    if (verification=="NOK")
     return Mr/MEd
     else 
     return ("error")

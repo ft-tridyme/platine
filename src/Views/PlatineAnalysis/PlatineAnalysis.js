@@ -42,7 +42,7 @@ function PlatineAnalysis() {
     combinaison: "combinaison d",      // Inputs: Choix de la combinaison
     z: 1.327,      // Inputs: Bras de Levier
     Mr: 622.97,         // Inputs: Moment résistant
-    verification: "nok",      // Inputs: vérification
+    verification: "NOK",      // Inputs: vérification
     fs: 0.62,      // Inputs: Facteur de sécurité
     m: 50,         
     ex: 55,         

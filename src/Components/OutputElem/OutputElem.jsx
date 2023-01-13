@@ -28,14 +28,14 @@ const useStyles = makeStyles(theme => ({
 
   },
   input: {
-    color: 'Black',
+    color: 'red',
     backgroundColor: "#e0e0e0",
     textAlign: "center",
     fontWeight: 600,
   },
 
   inputTwo: {
-    color: 'Black',
+    color: 'green',
     backgroundColor: "#e0e0e0",
     textAlign: "center",
     fontWeight: 600,
@@ -60,7 +60,15 @@ const OutputElem = ({
 
   let isMoreThanOne = false
 
-  value > 1 ? (isMoreThanOne = true) : (isMoreThanOne =false) 
+  if(value > 1 || value == "NOK" )
+  {
+    isMoreThanOne =true
+  }
+
+  else{
+    isMoreThanOne =false
+  }
+  // value > 1 ? (isMoreThanOne = true) : (isMoreThanOne =false) 
 
   return (
     <div className={classes.root}>
